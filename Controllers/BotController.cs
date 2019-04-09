@@ -20,8 +20,9 @@ namespace Microsoft.Bot.Builder.EchoBot
         private readonly IBotFrameworkHttpAdapter _adapter;
         private readonly IBot _bot;
 
-        public BotController(IBotFrameworkHttpAdapter adapter, IBot bot)
+        public BotController(IBotFrameworkHttpAdapter adapter, BotFrameworkWebSocketAdapter streamingAdapter, IBot bot)
         {
+            _streamingAdapter = streamingAdapter;
             _adapter = adapter;
             _bot = bot;
         }
